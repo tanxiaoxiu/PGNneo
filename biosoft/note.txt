@@ -1,0 +1,1 @@
+Start from start.sh or download them yourself.
