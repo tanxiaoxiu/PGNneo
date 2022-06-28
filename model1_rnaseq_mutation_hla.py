@@ -21,7 +21,7 @@ def rnaseq_processing(input1,input2):
     cmd5 = 'gatk MarkDuplicates -I ./rna_result/'+con_case+'_cut_sorted.bam -O ./rna_result/'+con_case+'_cut_marked_duplicates.bam -M ./rna_result/'+con_case+'_cut_marked_dup_metrics.txt'
 
     cmd6 = 'gatk AddOrReplaceReadGroups -I ./rna_result/'+con_case+'_cut_marked_duplicates.bam -O ./rna_result/'+con_case+'_cut_marked_duplicates_1.bam -ID 4 -LB lib1 -PL illumina -PU unit1 -SM 20'
-    cmd7 = 'gatk BaseRecalibrator -I ./rna_result/'+con_case+'_cut_marked_duplicates_1.bam -R ./reference/hg38/hg38.fa --known-sites ./reference/dbsnp_146.hg38.vcf.gz --known-sites ./reference/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz -O ./rna_result/'+con_case+'_cut_recal_data.table'
+    cmd7 = 'gatk BaseRecalibrator -I ./rna_result/'+con_case+'_cut_marked_duplicates_1.bam -R ./reference/hg38/hg38.fa --known-sites ./reference/dbsnp_146.hg38.vcf --known-sites ./reference/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz -O ./rna_result/'+con_case+'_cut_recal_data.table'
     cmd8 = 'gatk ApplyBQSR -R ./reference/hg38/hg38.fa -I ./rna_result/'+con_case+'_cut_marked_duplicates_1.bam --bqsr-recal-file ./rna_result/'+con_case+'_cut_recal_data.table -O ./rna_result/'+con_case+'_cut_recal.bam'
 
     cmd9 = 'picard AddOrReplaceReadGroups I=./rna_result/'+con_case+'_cut_recal.bam O=./rna_result/'+con_case+'_recal.bam RGID='+con_case+' RGLB=library1 RGPL=illumina RGPU=unit1 SORT_ORDER=coordinate RGSM='+con_case 
