@@ -15,7 +15,7 @@ Run the following codes before getting started.
 cd PGNneo
 bash start.sh
 ```
-## 3.1. Noncoding somatic variant calling and HLA typing
+### 3.1. Noncoding somatic variant calling and HLA typing
 ```
 python model1_rnaseq_mutation_hla.py control_name_R1.fastq.gz control_name_R2.fastq.gz case_name_R1.fastq.gz case_name_R2.fastq.gz
 # eg:
