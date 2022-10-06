@@ -104,12 +104,13 @@ def mk_fastaStr(pdSeries):
             continue
         else:
             try:
-                header = pdSeries["ID"] + "|" + pdSeries["gene"] + "|" + pdSeries[mut_prot] + "|" + pdSeries[
+                global header1
+                header1 = pdSeries["ID"] + "|" + pdSeries["gene"] + "|" + pdSeries[mut_prot] + "|" + pdSeries[
                     mut_prot_pos] + "\n"
             except:
                 print("Mutated protein %s translaste error", pdSeries["ID"])
-            header = header.replace(";", "|")
-            fastaStr = header + pdSeries[ant_prot]
+            header2 = header1.replace(";", "|")
+            fastaStr = header2 + pdSeries[ant_prot]
         fastaStr_lst.append(fastaStr)
     return (fastaStr_lst)
 
