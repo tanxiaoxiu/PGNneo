@@ -193,11 +193,11 @@ if __name__ == '__main__':
         i = i + 1
 
     ##Delete intermediate files
-    os.remove(initial_path+"/mut_result/con_case_1.vcf.idx")
-    os.remove(initial_path+"/mut_result/con_case_1.vcf.stats")
-    os.remove(initial_path+"/mut_result/con_case.vcf.idx")
-    os.remove(initial_path+"/mut_result/con_case.vcf.filteringStats.tsv")
-    os.remove(initial_path+"/mut_result/con_case_anno_out.avinput")
+    os.remove(initial_path+'/mut_result/'+con_case+'_1.vcf.idx')
+    os.remove(initial_path+'/mut_result/'+con_case+'_1.vcf.stats')
+    os.remove(initial_path+'/mut_result/'+con_case+'.vcf.idx')
+    os.remove(initial_path+'/mut_result/'+con_case+'.vcf.filteringStats.tsv')
+    os.remove(initial_path+'/mut_result/'+con_case+'_anno_out.avinput')
     os.remove(initial_path+"/mut_result/tst_df")    
     os.remove(initial_path+"/mut_result/mut_pro_pl.csv")
     os.remove(initial_path+"/mut_result/mut_pro_nl.csv")
