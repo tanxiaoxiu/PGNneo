@@ -15,7 +15,7 @@ def handle01_create_db():
 
 
 def handle02_xml():
-    cmd1='python ./biosoft/gen_mqpar.py ./biosoft/labelfree.xml /path/to/PGNneo/ms -o ./biosoft/mqpar.xml -t 6' 
+    cmd1='python ./biosoft/gen_mqpar.py ./biosoft/labelfree.xml /home/PGNneo/ms -o ./biosoft/mqpar.xml -t 6' 
     os.system(cmd1)
 
 
