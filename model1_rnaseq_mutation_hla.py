@@ -12,7 +12,7 @@ import sys
 def rnaseq_processing(input1,input2):
     con_case=input1.split('_')[0]
     cmd1='java -jar ./biosoft/trimmomatic-0.39/trimmomatic.jar PE -phred33 ./rnaseq/'+input1+' ./rnaseq/'+input2\
-         +' ./rna_result/'+con_case+'_cut_R1.fastq.gz ./rna_result/'+con_case+'_cut_unpaired_R1.fastq.gz ./rna_result/'+con_case+'_cut_R2.fastq.gz ./rna_result/'+con_case+'_cut_unpaired_R2.fastq.gz ILLUMINACLIP:biosoft/trimmomatic-0.39-1/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:5:20 LEADING:5 TRAILING:5 HEADCROP:10 MINLEN:50'
+         +' ./rna_result/'+con_case+'_cut_R1.fastq.gz ./rna_result/'+con_case+'_cut_unpaired_R1.fastq.gz ./rna_result/'+con_case+'_cut_R2.fastq.gz ./rna_result/'+con_case+'_cut_unpaired_R2.fastq.gz ILLUMINACLIP:biosoft/trimmomatic-0.39/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:5:20 LEADING:5 TRAILING:5 HEADCROP:10 MINLEN:50'
     cmd2="bwa mem -t 16 -R '@RG\\tID:foo\\tSM:bar\\tLB:library1' ./reference/hg38/hg38.fa ./rna_result/"+con_case+"_cut_R1.fastq.gz ./rna_result/"+con_case+"_cut_R2.fastq.gz > ./rna_result/"+con_case+"_cut.sam"
     cmd3='samtools fixmate -O bam ./rna_result/'+con_case+'_cut.sam ./rna_result/'+con_case+'_cut_fixmate.bam'
 
