@@ -18,17 +18,19 @@ RUN pip install --default-timeout=100 numpy pandas future pyomo matplotlib -i ht
 
 #Download
 RUN wget -c http://119.3.70.71/PGNneo/data/reference.tar.gz && \
-    tar -xzf reference.tar.gz && \
+    tar -xzf reference.tar.gz -C /home/PGNneo && \ 
     rm reference.tar.gz
 
 RUN wget -c http://118.31.70.55/ProGeo-neo/data/dbsnp_146.tar.gz && \
-    tar -xzf dbsnp_146.tar.gz -C /home/PGNneo/reference && \
+    tar -xzf dbsnp_146.tar.gz && \
+    mv ./dbsnp_146/dbsnp_146.hg38.vcf /home/PGNneo/reference && \
+    mv ./dbsnp_146/dbsnp_146.hg38.vcf.idx /home/PGNneo/reference && \
     rm dbsnp_146.tar.gz
 
 RUN wget -c http://119.3.70.71/PGNneo/data/test.tar.gz && \
     tar -xzf test.tar.gz && \
-    mv ./test/rnaseq ./ && \
-    mv ./test/ms ./ && \
+    mv ./test/rnaseq /home/PGNneo && \
+    mv ./test/ms /home/PGNneo && \
     rm test.tar.gz
 
 
