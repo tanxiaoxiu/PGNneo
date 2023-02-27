@@ -12,7 +12,7 @@ RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cl
 RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
 RUN conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/
 RUN conda config --set show_channel_urls yes
-RUN conda install -c r-base=4.0.3
+RUN conda install r-base=4.0.3
 RUN conda install -c bioconda bwa samtools gatk4 picard bedtools blast
 RUN pip install --default-timeout=100 numpy pandas future pyomo matplotlib -i https://pypi.tuna.tsinghua.edu.cn/simple
 

@@ -61,7 +61,7 @@ In addition to the command line, we also provide a GUI to run the tool. Users ca
 ```
 python gui.py
 ```
-![](GUI.JPG)
+![](GUI.jpg)
 
 For detailed software installation and usage of PGNneo, please read the User's Manual.
 For coding neoantigen detection, we previously established a proteogenomic pipeline ProGeo-neo, ProGeo-neo source code and documentation are available at https://github.com/kbvstmd/ProGeo-neo.
