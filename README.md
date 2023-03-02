@@ -16,7 +16,7 @@ cd PGNneo
 bash start.sh
 ```
 ### 2.2 Docker
-We provide a docker image (https://hub.docker.com/r/docker/xiaoxiutan/pgnneo) which contains all package dependencies. You need to install docker on your system in advance. Download the Dockerfile form https://github.com/tanxiaoxiu/PGNneo, then the command docker build  xiaoxiutan/pgnneo:v1 will pull the PGNneo image into your local machine.
+We provide a docker image (https://hub.docker.com/r/xiaoxiutan/pgnneo) which contains all package dependencies. You need to install docker on your system in advance. Download the Dockerfile form https://github.com/tanxiaoxiu/PGNneo, then the command docker build  xiaoxiutan/pgnneo:v1 will pull the PGNneo image into your local machine.
 ```
 docker build -t PGNneo .
 ```
